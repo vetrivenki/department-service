@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloud-config-server-app
-          image: cloud-config-server:0.0.1
+          image: vetrivenki/cloud-config-server:0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 9296
