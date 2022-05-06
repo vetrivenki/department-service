@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: department-service-app
-          image: dailycodebuffer/department-service:0.0.1
+          image: department-service:0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 9001
