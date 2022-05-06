@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: eureka
-          image: dailycodebuffer/service-registry:0.0.1
+          image: vetrivenki/service-registry:0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8761
