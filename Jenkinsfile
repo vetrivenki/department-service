@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         
-        registry = "vetri19venki/springbootApp"
+        registry = "vetri19venki/department-service"
         registryCredential = 'docker_credential'
         dockerImage = ''
     }
@@ -35,15 +35,15 @@ pipeline {
     
      stage('docker stop container') {
          steps {
-            sh 'docker ps -f name=springbootApp -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=springbootApp -q | xargs -r docker container rm'
+            sh 'docker ps -f name=department-service -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=department-service -q | xargs -r docker container rm'
          }
        }
 
     stage('Docker Run') {
      steps{
          script {
-            dockerImage.run("-p 8080:8085 --rm --name springbootApp")
+            dockerImage.run("-p 8080:8085 --rm --name department-service")
          }
       }
     }
